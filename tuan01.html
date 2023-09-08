@@ -49,8 +49,8 @@
     var Koalas = [88, 91, 110]
 
     var Dolphinsteam1 = Dolphins.
-    map((num) => num).reduce((num, cal) =>
-        num + cal, 0) / Dolphins.length
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
     var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
         num + cal, 0)) / Koalas.length
     DolphinsTeam = {
@@ -74,8 +74,8 @@
     var Koalas = [109, 95, 123]
 
     var Dolphinsteam1 = Dolphins.
-    map((num) => num).reduce((num, cal) =>
-        num + cal, 0) / Dolphins.length
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
     var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
         num + cal, 0)) / Koalas.length
     DolphinsTeam = {
@@ -113,8 +113,8 @@
     var Koalas = [109, 95, 106]
 
     var Dolphinsteam1 = Dolphins.
-    map((num) => num).reduce((num, cal) =>
-        num + cal, 0) / Dolphins.length
+        map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / Dolphins.length
     var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
         num + cal, 0)) / Koalas.length
     DolphinsTeam = {
@@ -169,8 +169,9 @@
 
 
     console.log('-------------Coding Challenge #5');
-    var Dolphins = [97, 112, 101]
-    var Koalas = [109, 95, 106]
+    console.log('-------------DATA 1');
+    var Dolphins = [44, 23, 71]
+    var Koalas = [65, 54, 49]
     const calcAverage = (ScoreTeam) => {
         return ScoreTeam.map((num) => num).reduce((num, cal) =>
             num + cal, 0) / ScoreTeam.length
@@ -190,14 +191,53 @@
     }
     const checkWinner = (team1, team2) => {
         if (team1.avgScore > team2.avgScore) {
-            console.log(team1.name + ' Win')
+            console.log(team1.name + ' Win (' + team1.avgScore + ' vs. ' + team2.avgScore + ')')
         } else if (team1.avgScore === team2.avgScore) {
-            console.log(team1.name + ' Draw ' + team2.name)
+            console.log(team1.name + ' Draw ' + team2.name + '(' + team2.avgScore + ' vs. ' + team1.avgScore + ')')
         } else {
-            console.log(team2.name + ' Win')
+            console.log(team2.name + ' Win (' + team2.avgScore + ' vs. ' + team1.avgScore + ')')
         }
     }
     checkWinner(Dolhins, Koalas)
+
+    console.log('-------------DATA 2');
+
+    Dolphins = [85, 54, 41]
+    Koalas = [23, 34, 27]
+
+
+    var avgDolhins = calcAverage(Dolphins)
+    console.log('Dolhin score ' + avgDolhins);
+
+    var avgKoalas = calcAverage(Koalas)
+    console.log('Koalas score ' + avgKoalas);
+
+    var Dolhins = {
+        name: 'Dolhins',
+        avgScore: avgDolhins
+    }
+    var Koalas = {
+        name: 'Koalas',
+        avgScore: avgKoalas
+    }
+
+    checkWinner(Dolhins, Koalas)
+
+    console.log('-------------Coding Challenge #6');
+
+    const calcTip = (bill) => {
+        if (bill => 50 && bill <= 300) {
+            return bill * 15 / 100;
+        } else {
+            return bill * 20 / 100;
+        }
+    }
+    bills = [125, 555, 44]
+    tips = []
+    bills.map((bill) => {
+        tips.push(calcTip(bill))
+    })
+    console.log(tips);
 </script>
 
 </html>
