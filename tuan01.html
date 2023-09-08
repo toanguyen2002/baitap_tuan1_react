@@ -8,7 +8,20 @@
 </head>
 
 <body>
-
+    <div class="game">
+        <h1>Guess My Number!</h1>
+        <p class="message">Start guessing...</p>
+        <input type="number" class="numberInput">
+        <input type="hidden" class="randomInput">
+        <div class="error" style="color: red;"></div>
+        <button class="check">Check!</button>
+        <button class="again">Again</button>
+        <Br></Br>
+        <div style="display: inline-block;">
+            <p>Score</p>
+            <p class="score" value="0"></p>
+        </div>
+    </div>
 </body>
 <script>
     console.log('-------------Coding Challenge #1');
@@ -172,7 +185,7 @@
     console.log('-------------DATA 1');
     var Dolphins = [44, 23, 71]
     var Koalas = [65, 54, 49]
-    const calcAverage = (ScoreTeam) => {
+    var calcAverage = (ScoreTeam) => {
         return ScoreTeam.map((num) => num).reduce((num, cal) =>
             num + cal, 0) / ScoreTeam.length
     }
@@ -238,6 +251,220 @@
         tips.push(calcTip(bill))
     })
     console.log(tips);
+    console.log('-------------Coding Challenge #7');
+
+
+    var MarkMiller = {
+        name: 'Mark', mass: 78,
+        height: 1.69
+
+    }
+
+    var JohnSmith = {
+        name: 'Mark', mass: 92,
+        height: 1.95
+
+    }
+
+    const calcBMI = (object) => {
+        return object.mass
+            / (object.height * object.height)
+
+    }
+    console.log(calcBMI(MarkMiller));
+    console.log(calcBMI(JohnSmith));
+
+    if (calcBMI(MarkMiller) < calcBMI(JohnSmith)) {
+        console.log('Johns BMI ' + calcBMI(JohnSmith) + ' is higher than Marks ' + calcBMI(MarkMiller) + '!')
+    } else {
+        console.log('Johns BMI ' + calcBMI(JohnSmith) + ' is lower than Marks ' + calcBMI(MarkMiller) + '!')
+    }
+
+    console.log('-------------Coding Challenge #8');
+    bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+    tips = []
+    Totals = []
+    bills.map((bill) => {
+        tips.push(calcTip(bill))
+        Totals.push(calcTip(bill) + bill)
+    })
+    console.log(tips);
+    console.log(Totals);
+    console.log('-------------Coding Challenge #8 BONUS');
+    var sum
+    var calcAverage = (arr) => {
+        sum = arr.reduce((cacl, value) => cacl + value, 0)
+        return sum
+    }
+    console.log('CACL AVG: ' + calcAverage(Totals) / Totals.length);
+
+    console.log('-------------Coding Challenge #9 ');
+
+
+    Data1 = [17, 21, 23]
+    Data2 = [12, 5, -5, 0, 4]
+
+    var printForecast = (arr) => {
+        arr.map((item, index) => {
+            console.log(item + 'oC in ' + (index + 1) + ' days');
+        })
+    }
+    printForecast(Data1)
+    printForecast(Data2)
+    console.log('-------------Coding Challenge #10 ');
+
+
+    const message = document.querySelector('.message');
+    const numberInput = document.querySelector('.numberInput');
+    const scoreDisplay = document.querySelector('.score');
+    const numberDisplay = document.querySelector('.number');
+    const again = document.querySelector('.again');
+    const randomInput = document.querySelector('.randomInput');
+    const check = document.querySelector('.check');
+    const error = document.querySelector('.error');
+    var score = 0
+    randomInput.value = Math.floor(Math.random() * 101);
+    console.log(randomInput.value)
+
+
+    again.addEventListener('click', () => {
+        randomInput.value = Math.floor(Math.random() * 101);
+        console.log(randomInput.value)
+    })
+    check.addEventListener('click', () => {
+
+        if (numberInput.value === randomInput.value) {
+            console.log(1)
+            score += 10
+            scoreDisplay.innerHTML = score
+            randomInput.value = Math.floor(Math.random() * 101);
+            numberInput.value = ''
+            console.log(randomInput.value)
+        } else {
+            error.innerHTML = "Play again"
+            score = 0
+            numberInput.value = ''
+            scoreDisplay.innerHTML = score
+        }
+    })
+
+
+    console.log('Data Structures, Modern Operators and Strings');
+    console.log('Coding Challenge #1');
+
+    game = {
+        "teams": [
+            {
+                "name": "Bayern Munich",
+                "players": [
+                    "Neuer",
+                    "Davies",
+                    "Lucas Hernandez",
+                    "Upamecano",
+                    "Kimmich",
+                    "Goretzka",
+                    "Muller",
+                    "Gnabry",
+                    "Lewandowski",
+                    "Coman",
+                ],
+            },
+            {
+                "name": "Borussia Dortmund",
+                "players": [
+                    "Kobel",
+                    "Meunier",
+                    "Akanji",
+                    "Hummels",
+                    "Guerreiro",
+                    "Witsel",
+                    "Bellingham",
+                    "Reus",
+                    "Haaland",
+                    "Malen",
+                ],
+            },
+        ],
+        "scored": ["Lewandowski", "Gnabry", "Reus"],
+        "odds": {
+            "team1": 1.6,
+            "draw": 3.5,
+            "team2": 5.5,
+        }, "scorers": {
+            "Gnarby": 1,
+            "Hummels": 1,
+            "Lewandowski": 2
+        }
+
+    }
+    players1 = game["teams"][0]['players']
+    players2 = game["teams"][1]['players']
+    players1[0] = 'gk'
+    players2[0] = 'gk'
+    allPlayers = [...players1, ...players2]
+    players1Final = ['Thiago', 'Coutinho', 'Perisic', ...players1]
+    var printGoals = (...NotArray) => {
+        console.log(NotArray.length);
+
+        NotArray.forEach((item, index) => {
+            console.log(`${item} +  số bàn thắng là:  + ${index + 1}`);
+        })
+
+    }
+    var team1 = game['odds']['team1']
+    var team2 = game['odds']['team2']
+    var draw = game['odds']['draw']
+    var teamdb = ['Davies', 'Muller', 'Lewandowski', 'Kimmich']
+    console.log(players1);
+    console.log(players2);
+    console.log(allPlayers);
+    console.log(players1Final);
+    console.log(team1);
+    console.log(team2);
+    console.log(draw);
+    console.log("use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.");
+    printGoals(...teamdb)
+    console.log("players from game.scored");
+    printGoals(...game.scored)
+
+    var value = 0
+    var arr = [team1, team2, draw]
+
+    var value = arr.filter((item, index) => {
+        return item === Math.min(team1, team2, draw)
+    })
+
+    console.log('The team with the lower odd is more likely to win ' + value);
+    console.log('Coding Challenge #2');
+
+    var arr = game['scored']
+
+    arr.map((item, index) => {
+        console.log(` Goal ${index + 1}: ${item}`);
+    })
+
+    var arr = [game['odds']['team1'], game['odds']['team2'], game['odds']['draw']]
+
+    var average = arr.reduce((cacl, init) => cacl + init, 0) / arr.length
+
+    console.log(average);
+
+    console.log(game['odds']);
+    var keyss = Object.keys(game['odds']);
+    var valuess = Object.values(game['odds']);
+    var odds = [
+        { odd: keyss[0], value: valuess[0] }, { odd: keyss[1], value: valuess[1] }, { odd: keyss[2], value: valuess[2] }
+    ]
+    odds.map((item, index) => {
+        if (item['odd'] === 'draw') {
+            console.log(`Odd of draw: ${item['value']} `)
+        } else {
+            console.log(`Odd  of ${item['odd']} Bayern Munich: ${item['value']} `);
+        }
+
+    })
+
+
 </script>
 
 </html>
