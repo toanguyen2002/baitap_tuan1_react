@@ -151,6 +151,53 @@
     checkWinnerTeamBonus2(DolphinsTeam, KoalasTeam)
 
     console.log('-------------Coding Challenge #4');
+
+
+    const Tipcalculator = (billnum) => {
+        if (billnum => 30 && billnum <= 50) {
+            return billnum * 15 / 100;
+        } else {
+            return billnum * 20 / 100;
+        }
+    }
+
+    billnum = [275, 40, 430]
+
+    billnum.map(element => {
+        console.log("The bill was " + element + ", the tip was 41.25" + Tipcalculator(element))
+    });
+
+
+    console.log('-------------Coding Challenge #5');
+    var Dolphins = [97, 112, 101]
+    var Koalas = [109, 95, 106]
+    const calcAverage = (ScoreTeam) => {
+        return ScoreTeam.map((num) => num).reduce((num, cal) =>
+            num + cal, 0) / ScoreTeam.length
+    }
+    var avgDolhins = calcAverage(Dolphins)
+    console.log('Dolhin score ' + avgDolhins);
+
+    var avgKoalas = calcAverage(Koalas)
+    console.log('Koalas score ' + avgKoalas);
+    var Dolhins = {
+        name: 'Dolhins',
+        avgScore: avgDolhins
+    }
+    var Koalas = {
+        name: 'Koalas',
+        avgScore: avgKoalas
+    }
+    const checkWinner = (team1, team2) => {
+        if (team1.avgScore > team2.avgScore) {
+            console.log(team1.name + ' Win')
+        } else if (team1.avgScore === team2.avgScore) {
+            console.log(team1.name + ' Draw ' + team2.name)
+        } else {
+            console.log(team2.name + ' Win')
+        }
+    }
+    checkWinner(Dolhins, Koalas)
 </script>
 
 </html>
