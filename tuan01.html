@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log('-------------Coding Challenge #1');
+    BMI = (mass, height) => {
+        console.log(mass / (height * height));
+    }
+    console.log('Data 1')
+    var Marksweight1 = BMI(78, 1.69)
+    var Johnweights1 = BMI(92, 1.76)
+
+
+    console.log('Data 2')
+    var StoreMarks2 = BMI(95, 1.88)
+    var Johnweights2 = BMI(85, 1.76)
+
+    const John = {
+        name: 'John',
+        BMI: Johnweights1
+    }
+
+    const Mark = {
+        name: 'Mark',
+        BMI: Marksweight1
+    }
+    console.log('-------------Coding Challenge #2');
+    const checkBMI = (user1, user2) => {
+        if (user1.BMI > user2.BMI)
+            console.log("" + user1.name + " BMI is higher than " + user2.name + "!")
+        else
+            console.log("" + user2.name + " BMI is higher than " + user1.name + "!")
+    }
+
+    checkBMI(John, Mark)
+    console.log('-------------Coding Challenge #3');
+    console.log('Data 1');
+
+    var Dolphins = [96, 108, 89]
+    var Koalas = [88, 91, 110]
+
+    var Dolphinsteam1 = Dolphins.
+    map((num) => num).reduce((num, cal) =>
+        num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeam = (team1, team2) => {
+        if (team1.score > team2.score) {
+            console.log("" + team1.name + " Win  with " + team1.score);
+        } else
+            console.log("" + team2.name + " Win with " + team2.score);
+    }
+    checkWinnerTeam(DolphinsTeam, KoalasTeam)
+
+    console.log('---Bonus 1');
+    var Dolphins = [97, 112, 101]
+    var Koalas = [109, 95, 123]
+
+    var Dolphinsteam1 = Dolphins.
+    map((num) => num).reduce((num, cal) =>
+        num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeamBonus1 = (team1, team2) => {
+        if (team1.score > 100 && team2.score < 100) {
+            console.log("" + team1.name + " Win  with " + team1.score)
+        }
+        if (team1.score < 100 && team2.score > 100) {
+            console.log("" + team2.name + " Win  with " + team2.score)
+        }
+        if (team1.score > 100 && team2.score > 100) {
+            if (team1.score > team2.score) {
+                console.log("" + team1.name + " Win  with " + team1.score)
+            } else if (team1.score === team2.score) {
+
+            } else {
+                console.log("" + team2.name + " Win  with " + team2.score)
+            }
+        }
+        if (team1.score < 100 && team2.score < 100) {
+            console.log("no team win")
+        }
+    }
+    checkWinnerTeamBonus1(DolphinsTeam, KoalasTeam)
+
+    console.log('---Bonus 2');
+    var Dolphins = [97, 112, 101]
+    var Koalas = [109, 95, 106]
+
+    var Dolphinsteam1 = Dolphins.
+    map((num) => num).reduce((num, cal) =>
+        num + cal, 0) / Dolphins.length
+    var Koalasteam1 = (Koalas.map((num) => num).reduce((num, cal) =>
+        num + cal, 0)) / Koalas.length
+    DolphinsTeam = {
+        name: 'Dolphins',
+        score: Dolphinsteam1
+    }
+    KoalasTeam = {
+        name: 'Koalas',
+        score: Koalasteam1
+    }
+    checkWinnerTeamBonus2 = (team1, team2) => {
+        // console.log('checkbonus2')
+        // console.log(team1.score)
+        // console.log(team2.score)
+        if (team1.score > 100 && team2.score < 100) {
+            console.log("" + team1.name + " Win  with " + team1.score)
+        }
+        if (team1.score < 100 && team2.score > 100) {
+            console.log("" + team2.name + " Win  with " + team2.score)
+        }
+        if (team1.score > 100 && team2.score > 100) {
+            if (team1.score > team2.score) {
+                console.log("" + team1.name + " Win  with " + team1.score)
+            } else if (team1.score === team2.score) {
+                console.log(team1.name + " draw " + team2.name)
+            } else {
+                console.log("" + team2.name + " Win  with " + team2.score)
+            }
+        }
+        if (team1.score < 100 && team2.score < 100) {
+            console.log("no team win")
+        }
+    }
+    checkWinnerTeamBonus2(DolphinsTeam, KoalasTeam)
+
+    console.log('-------------Coding Challenge #4');
+</script>
+
+</html>
