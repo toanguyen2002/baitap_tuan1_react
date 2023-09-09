@@ -509,6 +509,122 @@
     texts.map((text) => {
         changeText(text)
     })
+
+    const poll = {
+        question: "What is your favourite programming language?",
+        options: ["JavaScript", "Python", "Rust", "C++"],
+        answers: [0, 0, 0, 0],
+    };
+
+    ///////////
+    var checkDogs = (dogsJulia, dogsKate) => {
+        const dogsJuliaCopy = dogsJulia.filter((dog) => {
+
+            return dog > 3
+        })
+        var allDog = dogsJuliaCopy.concat(dogsKate)
+        allDog.map((dog, index) => {
+            dog > 3 ?
+                // ("Dog number 1 is an adult, and is 5 years old") or a puppy ("Dog number 2 is still a puppy")
+                console.log(`Dog number ${index + 1} is an adult, and is ${dog} years old`) :
+
+                console.log(`Dog number ${index + 1}  is still a puppy`);
+        })
+
+    }
+
+    checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]
+    )
+    checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4])
+
+    console.log('-------Coding Challenge #2');
+
+    var calcAverageHumanAge = (dogsAge) => {
+        return dogsAge.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4)
+    }
+    var arrDogs = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    var arrDogs = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    console.log('-------Coding Challenge #3');
+
+    var calcAverageHumanAge = (dogsAge) => {
+        return dogsAge.map(dogAge => dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4)
+    }
+    var arrDogs = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+
+    var arrDogs = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]).filter((age) => age > 18)
+    console.log(arrDogs.reduce((cacl, result) => cacl + result, 0) / arrDogs.length);
+    console.log('-------Coding Challenge #4');
+    const dogs = [
+        { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+        { weight: 8, curFood: 200, owners: ["Matilda"] },
+        { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+        { weight: 32, curFood: 340, owners: ["Michael"] },
+    ];
+    // Calculate the recommended food portion for each dog
+
+    dogs.map((dog) => {
+        return dog.recommendedFood = dog.weight ** 0.75 * 28
+    })
+
+
+    dogs.map((dog) => {
+        dog.owners.forEach((owner) => {
+            owner === 'Sarah'
+                ? dog.recommendedFood < dog.curFood ? console.log(' its eating too much ') : console.log('or too little')
+                : '';
+        })
+    })
+    console.log('====================ownersEatTooMuch');
+    var ownersEatTooMuch = (dogs) => {
+        var arrDogsowner = []
+        dogs.map((dog) => {
+            dog.owners.forEach((owner) => {
+                // console.log(owner);
+                dog.recommendedFood < dog.curFood ? arrDogsowner.push(owner) : '';
+            })
+        })
+        return arrDogsowner
+    }
+    console.log(ownersEatTooMuch(dogs).join(',') + ' eat too Much!');
+    console.log('===================ownersEatTooLittle');
+    var ownersEatTooLittle = (dogs) => {
+        var arrDogsowner = []
+        dogs.map((dog) => {
+            dog.owners.forEach((owner) => {
+                // console.log(owner);
+                dog.recommendedFood > dog.curFood ? arrDogsowner.push(owner) : '';
+            })
+        })
+        return arrDogsowner
+    }
+    console.log(ownersEatTooLittle(dogs).join(',') + ' eat too Little!');
+
+    console.log(' Log to the console whether there is any dog eating exactly the amount of foodthat is recommended (just true or false)');
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood === dog.recommendedFood ? console.log(true) : console.log(false))
+
+
+    console.log('Log to the console whether there is any dog eating an okay amount of food (just true or false)');
+
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood >= dog.recommendedFood ? console.log(true) : console.log(false))
+
+    console.log(' Log to the console whether there is any dog eating exactly the amount of foodthat is recommended (just true or false)');
+
+
+    var dogcurrRecomm = dogs.forEach((dog) => dog.curFood <= dog.recommendedFood ? console.log(true) : console.log(false))
+
+
+    dogssort = dogs.sort((a, b) => { return a.curFood - b.curFood })
+    console.log(dogssort);
+
+
+
+
+
 </script>
 
 </html>
