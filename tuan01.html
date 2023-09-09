@@ -463,8 +463,52 @@
         }
 
     })
+    console.log('-------------Coding Challenge #3');
+    gameEvents = [
+        { "time": 17, "type": "GOAL" },
+        { "time": 32, "type": "YELLOW_CARD" },
+        { "time": 45, "type": "SUBSTITUTION" },
+        { "time": 55, "type": "FOUL" },
+        { "time": 70, "type": "RED_CARD" },
+        { "time": 80, "type": "GOAL" },
+    ]
+    var arr = gameEvents.filter((item) => {
+        return item.name !== 'YELLOW_CARD'
+    })
+    console.log(arr);
+
+    var avgTime = 90 / gameEvents.length
+
+    console.log(avgTime);
+
+    var arr = gameEvents.map((item) => {
+        if (item.time < 45) {
+            console.log(`[FIRST HALF] ${item.time} :${item.type} `);
+        } else {
+            console.log(`[SECOND HALF] ${item.time} :${item.type} `);
+        }
+    })
 
 
+    var UpLowCase = (text) => {
+        return text.charAt(0).toUpperCase() + text.slice(1).toLocaleLowerCase()
+    }
+    var changeText = (text) => {
+        text_rp = text.replace('_', " ")
+        texts = text_rp.split(' ')
+        console.log(texts[0] + UpLowCase(texts[1]))
+
+    }
+    var texts = [
+        'underscore_case',
+        'first_name',
+        'Some_Variable',
+        'calculate_AGE',
+        'delayed_departure',
+    ]
+    texts.map((text) => {
+        changeText(text)
+    })
 </script>
 
 </html>
