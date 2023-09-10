@@ -750,8 +750,17 @@
 
     const rivian = new EVCl('Rivian', 120, 23)
     rivian.accelerate()
+    console.log('===============================ASYNCHRONOUS JAVASCRIPT=========================');
+    console.log('===============================Coding Challenge #1=========================');
 
 
+    var callApi = async () => {
+        var callapi = await fetch('https://geocode.xyz/52.508,13.381?geoit=json')
+            .then(res => { return res.json() })
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+    }
+    console.log(callApi())
 </script>
 
 </html>
