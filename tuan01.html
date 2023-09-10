@@ -754,13 +754,13 @@
     console.log('===============================Coding Challenge #1=========================');
 
 
-    var callApi = async () => {
-        var callapi = await fetch('https://geocode.xyz/52.508,13.381?geoit=json')
+    var whereAmI = async (lat, lng) => {
+        var callapi = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
             .then(res => { return res.json() })
-            .then(data => console.log(data))
+            .then(data => console.log(`You are in ${data['city']}, ${data['country']}`))
             .catch(error => console.log(error))
     }
-    console.log(callApi())
+    console.log(whereAmI(52.508, 13.381))
 </script>
 
 </html>
